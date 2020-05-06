@@ -1,0 +1,4 @@
+# Project exclude paths
+/jdbc-1/target/
+/jdbc-4/target/
+/jdbc-5/target/
