@@ -40,6 +40,7 @@ public class JDBCUtils {
 
     /**
      * 关闭数据库资源
+     * 从连接池中获取的连接，已经重写了 close() 方法，不会真的关闭连接
      */
     public static void closeResource(Connection connection, Statement statement, ResultSet resultSet) {
         try {
