@@ -31,6 +31,8 @@ public class QueryRunnerTest {
             int affectedRows = runner.update(connection, sql, "吴亦凡", "wyf@sb.com", "2020-02-02");
             System.out.println("受影响的行数：" + affectedRows);
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             JDBCUtils.closeResource(connection, null, null);
         }
     }
@@ -48,6 +50,8 @@ public class QueryRunnerTest {
             Customer customer = runner.query(connection, sql, new BeanHandler<>(Customer.class), 24);
             System.out.println(customer);
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             JDBCUtils.closeResource(connection, null, null);
         }
     }
@@ -65,6 +69,8 @@ public class QueryRunnerTest {
             Map<String, Object> result = runner.query(connection, sql, new MapHandler(), 18);
             System.out.println(result);
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             JDBCUtils.closeResource(connection, null, null);
         }
     }
@@ -82,6 +88,8 @@ public class QueryRunnerTest {
             List<Customer> customers = runner.query(connection, sql, new BeanListHandler<>(Customer.class), 10);
             customers.forEach(System.out::println);
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             JDBCUtils.closeResource(connection, null, null);
         }
     }
@@ -99,6 +107,8 @@ public class QueryRunnerTest {
             List<Map<String, Object>> resultList = runner.query(connection, sql, new MapListHandler(), 10);
             resultList.forEach(System.out::println);
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             JDBCUtils.closeResource(connection, null, null);
         }
     }
@@ -116,6 +126,8 @@ public class QueryRunnerTest {
             Long count = runner.query(connection, sql, new ScalarHandler<>());
             System.out.println(count);
         } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
             JDBCUtils.closeResource(connection, null, null);
         }
     }
