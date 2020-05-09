@@ -38,7 +38,7 @@ public class UpdateTemplate {
         PreparedStatement preparedStatement = null;
         try {
             //1.获取数据库连接
-            connection = JDBCUtils.getConnection();
+            connection = JdbcUtils.getConnection();
             //2.预编译SQL语句，获取PreparedStatement实例
             preparedStatement = connection.prepareStatement(sql);
             //3.填充占位符
@@ -52,7 +52,7 @@ public class UpdateTemplate {
             e.printStackTrace();
         }finally{
             //5.关闭数据库资源
-            JDBCUtils.closeResource(connection, preparedStatement, null);
+            JdbcUtils.closeResource(connection, preparedStatement, null);
         }
     }
 

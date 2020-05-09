@@ -1,6 +1,6 @@
-package com.atgui.dbcp.utils;
+package com.atgui.druid.utils;
 
-import org.apache.commons.dbcp.BasicDataSourceFactory;
+import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 import javax.sql.DataSource;
 import java.io.InputStream;
@@ -11,28 +11,31 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * 使用DBCP数据库连接池获取数据库连接
+ * 使用Druid数据库连接池获取数据库连接
  *
  * @author GuofanLee
- * @date 2020-05-06 14:17
+ * @date 2020-05-06 15:55
  */
-public class JDBCUtils {
+public class JdbcUtils {
 
     private static DataSource dataSource;
 
     static {
         try {
             Properties properties = new Properties();
-            InputStream resource = ClassLoader.getSystemResourceAsStream("dbcp.properties");
+            //InputStream resource = ClassLoader.getSystemResourceAsStream("jdbc.properties");
+            //InputStream resource = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");
+            //Java web 项目中必须这么写，否则返回的 InputStream 为 null
+            InputStream resource = JdbcUtils.class.getClassLoader().getResourceAsStream("druid.properties");
             properties.load(resource);
-            dataSource = BasicDataSourceFactory.createDataSource(properties);
+            dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * 使用DBCP数据库连接池获取数据库连接
+     * 使用Druid数据库连接池获取数据库连接
      */
     public static Connection getConnection() throws SQLException {
         return dataSource.getConnection();

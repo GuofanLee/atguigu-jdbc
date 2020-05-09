@@ -10,17 +10,17 @@ import java.util.Properties;
  * @author GuofanLee
  * @date 2020-05-03 11:03
  */
-public class JDBCUtils {
+public class JdbcUtils {
 
     /**
      * 获取数据库连接
      */
     public static Connection getConnection() throws Exception {
-        //读取配置
-//        InputStream resource = JDBCUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
-//        InputStream resource = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");
-        InputStream resource = ClassLoader.getSystemResourceAsStream("jdbc.properties");
         Properties properties = new Properties();
+        //InputStream resource = ClassLoader.getSystemResourceAsStream("jdbc.properties");
+        //InputStream resource = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");
+        //Java web 项目中必须这么写，否则返回的 InputStream 为 null
+        InputStream resource = JdbcUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
         properties.load(resource);
         String driverClass = properties.getProperty("driverClass");
         String url = properties.getProperty("url");

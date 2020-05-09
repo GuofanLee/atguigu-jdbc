@@ -13,7 +13,7 @@ import java.sql.Statement;
  * @author GuofanLee
  * @date 2020-05-06 14:17
  */
-public class JDBCUtils {
+public class JdbcUtils {
 
     //传入的参数与配置文件中 named-config 标签的 name 属性一致
     private static final DataSource dataSource = new ComboPooledDataSource("c3p0-config");

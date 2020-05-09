@@ -58,7 +58,7 @@ public class QueryTemplate {
         List<T> result = new ArrayList<>();
         try {
             //1.获取数据库连接
-            connection = JDBCUtils.getConnection();
+            connection = JdbcUtils.getConnection();
             //2.预编译SQL语句，获取PreparedStatement实例
             preparedStatement = connection.prepareStatement(sql);
             //3.填充占位符
@@ -91,7 +91,7 @@ public class QueryTemplate {
             e.printStackTrace();
         } finally {
             //6.关闭数据库资源
-            JDBCUtils.closeResource(connection, preparedStatement, resultSet);
+            JdbcUtils.closeResource(connection, preparedStatement, resultSet);
         }
         return result;
     }
@@ -106,7 +106,7 @@ public class QueryTemplate {
         T t = null;
         try {
             //1.获取数据库连接
-            connection = JDBCUtils.getConnection();
+            connection = JdbcUtils.getConnection();
             //2.预编译SQL语句，获取PreparedStatement实例
             preparedStatement = connection.prepareStatement(sql);
             //3.填充占位符
@@ -138,7 +138,7 @@ public class QueryTemplate {
             e.printStackTrace();
         } finally {
             //6.关闭数据库资源
-            JDBCUtils.closeResource(connection, preparedStatement, resultSet);
+            JdbcUtils.closeResource(connection, preparedStatement, resultSet);
         }
         return t;
     }

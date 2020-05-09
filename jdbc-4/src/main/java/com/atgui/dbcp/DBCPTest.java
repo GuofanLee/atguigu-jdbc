@@ -1,6 +1,6 @@
 package com.atgui.dbcp;
 
-import com.atgui.dbcp.utils.JDBCUtils;
+import com.atgui.dbcp.utils.JdbcUtils;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 import org.junit.Test;
@@ -50,7 +50,7 @@ public class DBCPTest {
 
     @Test
     public void test3() throws SQLException {
-        System.out.println(JDBCUtils.getConnection());
+        System.out.println(JdbcUtils.getConnection());
     }
 
 }

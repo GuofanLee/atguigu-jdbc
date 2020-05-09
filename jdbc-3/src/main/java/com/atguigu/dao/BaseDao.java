@@ -1,6 +1,6 @@
 package com.atguigu.dao;
 
-import com.atguigu.jdbc.utils.JDBCUtils;
+import com.atguigu.jdbc.utils.JdbcUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -51,7 +51,7 @@ public abstract class BaseDao<T> {
             e.printStackTrace();
         }finally{
             //4.关闭数据库资源，数据库连接 Connection 由调用者管理，此处不做关闭
-            JDBCUtils.closeResource(null, preparedStatement, null);
+            JdbcUtils.closeResource(null, preparedStatement, null);
         }
     }
 
@@ -94,7 +94,7 @@ public abstract class BaseDao<T> {
             e.printStackTrace();
         } finally {
             //5.关闭数据库资源，数据库连接 Connection 由调用者管理，此处不做关闭
-            JDBCUtils.closeResource(null, preparedStatement, resultSet);
+            JdbcUtils.closeResource(null, preparedStatement, resultSet);
         }
         return t;
     }
@@ -139,7 +139,7 @@ public abstract class BaseDao<T> {
             e.printStackTrace();
         } finally {
             //5.关闭数据库资源，数据库连接 Connection 由调用者管理，此处不做关闭
-            JDBCUtils.closeResource(null, preparedStatement, resultSet);
+            JdbcUtils.closeResource(null, preparedStatement, resultSet);
         }
         return result;
     }
@@ -168,7 +168,7 @@ public abstract class BaseDao<T> {
             e.printStackTrace();
         } finally {
             //5.关闭数据库资源，数据库连接 Connection 由调用者管理，此处不做关闭
-            JDBCUtils.closeResource(null, preparedStatement, resultSet);
+            JdbcUtils.closeResource(null, preparedStatement, resultSet);
         }
         return null;
     }

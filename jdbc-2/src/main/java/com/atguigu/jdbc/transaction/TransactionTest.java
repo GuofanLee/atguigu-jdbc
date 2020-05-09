@@ -1,6 +1,6 @@
 package com.atguigu.jdbc.transaction;
 
-import com.atguigu.jdbc.utils.JDBCUtils;
+import com.atguigu.jdbc.utils.JdbcUtils;
 import com.atguigu.jdbc.utils.UpdateTemplate;
 import org.junit.Test;
 
@@ -40,7 +40,7 @@ public class TransactionTest {
         Connection connection = null;
         try {
             //1.获取连接
-            connection = JDBCUtils.getConnection();
+            connection = JdbcUtils.getConnection();
             //2.关闭自动提交
             connection.setAutoCommit(false);
             String sql1 = "update user_table set balance = balance - 100 where user = ?";
@@ -75,7 +75,7 @@ public class TransactionTest {
                 e.printStackTrace();
             }
             //7.关闭数据库连接资源
-            JDBCUtils.closeResource(connection, null, null);
+            JdbcUtils.closeResource(connection, null, null);
         }
     }
 
@@ -98,7 +98,7 @@ public class TransactionTest {
             e.printStackTrace();
         }finally{
             //4.关闭数据库资源，数据库连接 Connection 由调用者管理，此处不做关闭
-            JDBCUtils.closeResource(null, preparedStatement, null);
+            JdbcUtils.closeResource(null, preparedStatement, null);
         }
     }
 

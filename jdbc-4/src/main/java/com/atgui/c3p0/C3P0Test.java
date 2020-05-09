@@ -1,6 +1,6 @@
 package com.atgui.c3p0;
 
-import com.atgui.c3p0.utils.JDBCUtils;
+import com.atgui.c3p0.utils.JdbcUtils;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.junit.Test;
 
@@ -47,7 +47,7 @@ public class C3P0Test {
 
     @Test
     public void test3() throws Exception {
-        Connection connection = JDBCUtils.getConnection();
+        Connection connection = JdbcUtils.getConnection();
         System.out.println(connection);
     }
 

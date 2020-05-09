@@ -81,11 +81,11 @@ public class ConnectionTest {
      */
     @Test
     public void testConnection5() throws Exception {
-        //读取配置，ConnectionTest为当前方法所在的类名
-//        InputStream resource = JDBCUtils.class.getClassLoader().getResourceAsStream("jdbc.properties");
-//        InputStream resource = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");
-        InputStream resource = ClassLoader.getSystemResourceAsStream("jdbc.properties");
         Properties properties = new Properties();
+        //InputStream resource = ClassLoader.getSystemResourceAsStream("jdbc.properties");
+        //InputStream resource = ClassLoader.getSystemClassLoader().getResourceAsStream("jdbc.properties");
+        //Java web 项目中必须这么写，否则返回的 InputStream 为 null
+        InputStream resource = ConnectionTest.class.getClassLoader().getResourceAsStream("jdbc.properties");
         properties.load(resource);
         String driverClass = properties.getProperty("driverClass");
         String url = properties.getProperty("url");

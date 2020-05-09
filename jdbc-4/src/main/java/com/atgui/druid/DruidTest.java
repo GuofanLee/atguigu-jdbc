@@ -1,6 +1,6 @@
 package com.atgui.druid;
 
-import com.atgui.druid.utils.JDBCUtils;
+import com.atgui.druid.utils.JdbcUtils;
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ public class DruidTest {
 
     @Test
     public void test1() throws SQLException {
-        Connection connection = JDBCUtils.getConnection();
+        Connection connection = JdbcUtils.getConnection();
         System.out.println(connection);
     }
 
