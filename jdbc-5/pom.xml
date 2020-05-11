@@ -23,7 +23,7 @@
             <artifactId>jdbc-4</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- Apache-DbUtils -->
+        <!-- Apache-Commons-DbUtils -->
         <dependency>
             <groupId>commons-dbutils</groupId>
             <artifactId>commons-dbutils</artifactId>

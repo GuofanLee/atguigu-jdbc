@@ -9,10 +9,10 @@
 * 通用 Dao
     * 考虑了事务
     * 未使用数据库连接池
-    * 未使用 Apache-DbUtils 工具
-* 有道云笔记上有使用了数据库连接池和 Apache-DbUtils 的通用 Dao 模板
+    * 未使用 commons-dbutils 工具
+* 有道云笔记上有使用了 druid 数据库连接池和 commons-dbutils 的通用 Dao 模板
     * 但未考虑事务
 ## jdbc-4
 * 数据库连接池
 ## jdbc-5
-* Apache-DbUtils 的使用
+* commons-dbutils 的使用

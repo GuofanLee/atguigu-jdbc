@@ -19,7 +19,7 @@ import java.util.Map;
 public class QueryRunnerTest {
 
     /**
-     * 使用 DbUtils 测试插入操作
+     * 使用 QueryRunner 测试插入操作
      */
     @Test
     public void testInsert() {
@@ -38,7 +38,7 @@ public class QueryRunnerTest {
     }
 
     /**
-     * 使用 DbUtils 查询一条记录，使用 BeanHandler 处理结果集
+     * 使用 QueryRunner 查询一条记录，使用 BeanHandler 处理结果集
      */
     @Test
     public void testQuery1() {
@@ -57,7 +57,7 @@ public class QueryRunnerTest {
     }
 
     /**
-     * 使用 DbUtils 查询一条记录，使用 MapHandler 处理结果集
+     * 使用 QueryRunner 查询一条记录，使用 MapHandler 处理结果集
      */
     @Test
     public void testQuery2() {
@@ -76,7 +76,7 @@ public class QueryRunnerTest {
     }
 
     /**
-     * 使用 DbUtils 查询多条记录，使用 BeanListHandler 处理结果集
+     * 使用 QueryRunner 查询多条记录，使用 BeanListHandler 处理结果集
      */
     @Test
     public void testBatchQuery1() {
@@ -95,7 +95,7 @@ public class QueryRunnerTest {
     }
 
     /**
-     * 使用 DbUtils 查询多条记录，使用 MapListHandler 处理结果集
+     * 使用 QueryRunner 查询多条记录，使用 MapListHandler 处理结果集
      */
     @Test
     public void testBatchQuery2() {
@@ -114,7 +114,7 @@ public class QueryRunnerTest {
     }
 
     /**
-     * 使用 DbUtils 查询表中的记录数，使用 ScalarHandler 处理结果集
+     * 使用 QueryRunner 查询表中的记录数，使用 ScalarHandler 处理结果集
      */
     @Test
     public void testGetCount() {
