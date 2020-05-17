@@ -96,7 +96,7 @@ public class TransactionTest {
             preparedStatement.execute();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             //4.关闭数据库资源，数据库连接 Connection 由调用者管理，此处不做关闭
             JdbcUtils.closeResource(null, preparedStatement, null);
         }

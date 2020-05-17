@@ -33,12 +33,12 @@ public class JdbcUtils {
     }
 
     /**
-     * 关闭数据库资源
+     * 关闭数据库资源，注意关闭的顺序：后打开的先关闭，先打开的后关闭
      */
     public static void closeResource(Connection connection, Statement statement, ResultSet resultSet) {
         try {
-            if (connection != null) {
-                connection.close();
+            if (resultSet != null) {
+                resultSet.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,8 +51,8 @@ public class JdbcUtils {
             e.printStackTrace();
         }
         try {
-            if (resultSet != null) {
-                resultSet.close();
+            if (connection != null) {
+                connection.close();
             }
         } catch (Exception e) {
             e.printStackTrace();
