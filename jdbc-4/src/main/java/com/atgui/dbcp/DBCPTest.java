@@ -30,8 +30,10 @@ public class DBCPTest {
         source.setPassword("123456");
         //设置初始连接数
         source.setInitialSize(5);
+        //设置最小连接数
+        source.setMinIdle(10);
         //设置最大连接数
-        source.setMaxActive(10);
+        source.setMaxActive(20);
         //设置其它参数......
         //获取连接
         Connection connection = source.getConnection();
